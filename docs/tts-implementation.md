@@ -22,8 +22,10 @@ type TTSEngine interface {
 ### 2.2 支持多种 TTS 的方式
 
 ```
+internal/ai/
+└── types.go       # TTSEngine 接口定义
+
 internal/tts/
-├── types.go       # 接口定义（已存在）
 ├── openai.go      # OpenAI TTS 实现（已有框架）
 ├── glm.go         # GLM-TTS 实现（新增）
 ├── edge.go        # Edge-TTS 实现（可选）
