@@ -42,6 +42,11 @@ func (g *GLM) SetVoice(voice string) {
 
 // SetSpeed sets the speech speed [0.5, 2.0]
 func (g *GLM) SetSpeed(speed float64) {
+	if speed < 0.5 {
+		speed = 0.5
+	} else if speed > 2.0 {
+		speed = 2.0
+	}
 	g.speed = speed
 }
 
