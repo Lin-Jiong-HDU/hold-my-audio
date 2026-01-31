@@ -94,14 +94,14 @@ func findSplitPoint(s string) int {
 
 	// 先找句号
 	for _, marker := range sentenceEnds {
-		if idx := strings.LastIndex(s[:maxInputLength], marker); idx > len(s)/2 && idx < maxInputLength {
+		if idx := strings.LastIndex(s, marker); idx > len(s)/2 {
 			return idx + len(marker)
 		}
 	}
 
 	// 找不到句号，找逗号
 	for _, marker := range commas {
-		if idx := strings.LastIndex(s[:maxInputLength], marker); idx > len(s)/2 && idx < maxInputLength {
+		if idx := strings.LastIndex(s, marker); idx > len(s)/2 {
 			return idx + len(marker)
 		}
 	}
