@@ -88,7 +88,7 @@ func splitText(text string) []string {
 // findSplitPoint 在文本中找到合适的分割点
 // 优先找句号，其次逗号，最后强制在 80% 位置分割
 func findSplitPoint(s string) int {
-	// 中文标点的 UTF-8 编码
+	// 常见中英文句末标点
 	sentenceEnds := []string{"。", "！", "？", ".", "!", "?"}
 	commas := []string{"，", ",", "；", ";"}
 
